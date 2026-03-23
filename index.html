@@ -9,13 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0b0b0f;
-  color: white;
+  background: #ffffff;
+  color: #111;
 }
 
+/* NAV */
 .nav {
   position: fixed;
   width: 100%;
@@ -23,22 +28,26 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.8);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
 }
 
-.section {
-  padding: 100px 20px;
-  max-width: 1000px;
-  margin: auto;
+.nav a {
+  text-decoration: none;
+  color: #111;
+  margin-left: 20px;
 }
 
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   text-align: center;
 }
 
@@ -48,7 +57,8 @@ h1 {
 }
 
 p {
-  color: #aaa;
+  color: #555;
+  max-width: 600px;
 }
 
 .btn {
@@ -57,24 +67,54 @@ p {
   background: linear-gradient(135deg, #6c5ce7, #a29bfe);
   border: none;
   border-radius: 12px;
+  color: white;
   cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+.section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .grid {
   display: grid;
-  gap: 20px;
+  gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
-  background: rgba(255,255,255,0.03);
+  background: #f8f8f8;
   padding: 25px;
   border-radius: 16px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+/* IMAGES */
+.image {
+  width: 100%;
+  border-radius: 16px;
+  margin-top: 30px;
 }
 </style>
 </head>
@@ -82,60 +122,103 @@ h2 {
 <body>
 
 <div class="nav">
-  <div>Diego | Software deportivo</div>
+  <div><strong>Diego</strong> | Software deportivo</div>
+  <div>
+    <a href="#servicios">Servicios</a>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
+  </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Automatizo tu sistema de entrenamiento para que ganes tiempo y escales sin caos</h1>
-  <p>Deja de perder horas en Excel y procesos manuales</p>
-  <button class="btn">Quiero automatizar mi negocio</button>
+  <h1>Automatizo tu negocio de entrenamiento en 7 días para que ahorres horas cada semana</h1>
+  <p>Deja de perder tiempo con Excel y procesos manuales. Te construyo un sistema que trabaja por ti.</p>
+
+  <button class="btn" onclick="window.location.href='https://wa.me/346XXXXXXXX'">
+    Quiero ahorrar tiempo
+  </button>
+
+  <img class="image" src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1">
 </section>
 
+<!-- RESULTADOS -->
+<section class="section">
+  <h2>Lo que consigues</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>⏱️ Ahorra tiempo</h3>
+      <p>Reduce 5–10 horas semanales eliminando tareas manuales</p>
+    </div>
+    <div class="card">
+      <h3>📊 Sistema claro</h3>
+      <p>Organiza tu negocio sin depender de Excel</p>
+    </div>
+    <div class="card">
+      <h3>🚀 Escala tu servicio</h3>
+      <p>Más clientes sin aumentar tu carga de trabajo</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
 <section class="section">
   <h2>El problema</h2>
   <div class="grid">
-    <div class="card">Horas programando sesiones</div>
-    <div class="card">Seguimiento manual de clientes</div>
-    <div class="card">Procesos desorganizados</div>
+    <div class="card">Horas programando sesiones manualmente</div>
+    <div class="card">Seguimiento desorganizado</div>
+    <div class="card">Procesos poco escalables</div>
   </div>
+
+  <img class="image" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
 </section>
 
-<section class="section">
-  <h2>La solución</h2>
+<!-- SERVICIOS -->
+<section id="servicios" class="section">
+  <h2>Cómo te ayudo</h2>
   <div class="grid">
-    <div class="card">Sistema automatizado de programación</div>
-    <div class="card">Seguimiento automático de clientes</div>
-    <div class="card">Dashboard de control</div>
+    <div class="card">
+      <h3>Automatización</h3>
+      <p>Elimino tareas repetitivas y conecto tus herramientas</p>
+    </div>
+    <div class="card">
+      <h3>Sistemas</h3>
+      <p>Organizo tu negocio como un sistema eficiente</p>
+    </div>
+    <div class="card">
+      <h3>Software</h3>
+      <p>Desarrollo herramientas adaptadas a tu modelo</p>
+    </div>
   </div>
 </section>
 
+<!-- PROCESO -->
 <section class="section">
-  <h2>Cómo funciona</h2>
+  <h2>Cómo trabajamos</h2>
   <div class="grid">
-    <div class="card">1. Analizo tu sistema actual</div>
-    <div class="card">2. Diseño automatizaciones</div>
-    <div class="card">3. Implemento todo en 7 días</div>
+    <div class="card">Analizo tu sistema actual</div>
+    <div class="card">Diseño automatizaciones</div>
+    <div class="card">Implemento todo en 7 días</div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Para quién es</h2>
-  <p style="text-align:center;">
-    Entrenadores y centros que quieren dejar de depender de Excel y escalar su negocio
-  </p>
-</section>
-
-<section class="section">
+<!-- SOBRE MI -->
+<section id="sobre" class="section">
   <h2>Sobre mí</h2>
   <p style="text-align:center; max-width:700px; margin:auto;">
-    Soy entrenador y desarrollador. He visto durante años cómo los profesionales del entrenamiento pierden tiempo en tareas que deberían estar automatizadas. Ahora construyo sistemas para eliminar ese problema.
+    Soy entrenador y desarrollador. He vivido el problema desde dentro.
+    No construyo software genérico: diseño sistemas pensados para el día a día real de entrenadores.
   </p>
 </section>
 
-<section class="section" style="text-align:center;">
+<!-- CTA FINAL -->
+<section id="contacto" class="section" style="text-align:center;">
   <h2>¿Hablamos?</h2>
-  <p>Si quieres ahorrar tiempo y organizar tu negocio, esto es para ti</p>
-  <button class="btn">Agendar llamada</button>
+  <p>Si quieres dejar de perder tiempo y organizar tu negocio, esto es para ti</p>
+
+  <button class="btn" onclick="window.location.href='https://wa.me/346XXXXXXXX'">
+    Agendar llamada
+  </button>
 </section>
 
 </body>
