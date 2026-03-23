@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diego | Software deportivo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0b0b0f;
+  color: white;
+}
+
+/* NAVBAR */
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a1a2e, #000);
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  max-width: 800px;
+}
+
+p {
+  color: #aaa;
+  max-width: 600px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+.section {
+  padding: 100px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.05);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* TITLES */
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* CTA FINAL */
+.cta {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1a1a2e, #000);
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <div>Diego</div>
+  <div>
+    <a href="#problema">Problema</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</div>
+
+<section class="hero">
+  <h1>Automatizo el trabajo de entrenadores para que escalen sin caos</h1>
+  <p>Sistemas, IA y software diseñados para el mundo del entrenamiento</p>
+  <button class="btn">Trabajar conmigo</button>
+</section>
+
+<section id="problema" class="section">
+  <h2>El problema</h2>
+  <div class="grid">
+    <div class="card">Horas programando sesiones manualmente</div>
+    <div class="card">Dependencia de Excel</div>
+    <div class="card">Procesos caóticos</div>
+  </div>
+</section>
+
+<section id="servicios" class="section">
+  <h2>Cómo te ayudo</h2>
+  <div class="grid">
+    <div class="card">Automatización con n8n</div>
+    <div class="card">Sistemas de gestión</div>
+    <div class="card">Software a medida (SaaS)</div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <h2>¿Hablamos?</h2>
+  <p>Si quieres dejar de perder tiempo con procesos manuales, esto es para ti</p>
+  <button class="btn">Agendar llamada</button>
+</section>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      card.classList.add('visible');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
