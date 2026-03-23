@@ -4,15 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Diego | Software deportivo</title>
+<title>Diego | Automatización para entrenadores</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -20,7 +16,6 @@ body {
   color: white;
 }
 
-/* NAVBAR */
 .nav {
   position: fixed;
   width: 100%;
@@ -30,25 +25,21 @@ body {
   padding: 20px 40px;
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
-  z-index: 1000;
 }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
+.section {
+  padding: 100px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-/* HERO */
 .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top, #1a1a2e, #000);
   text-align: center;
-  padding: 20px;
 }
 
 h1 {
@@ -58,7 +49,6 @@ h1 {
 
 p {
   color: #aaa;
-  max-width: 600px;
 }
 
 .btn {
@@ -68,18 +58,6 @@ p {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-/* SECTIONS */
-.section {
-  padding: 100px 20px;
-  max-width: 1000px;
-  margin: auto;
 }
 
 .grid {
@@ -92,33 +70,11 @@ p {
   background: rgba(255,255,255,0.03);
   padding: 25px;
   border-radius: 16px;
-  backdrop-filter: blur(10px);
-  transition: 0.4s;
-  border: 1px solid rgba(255,255,255,0.05);
-  opacity: 0;
-  transform: translateY(30px);
 }
 
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-/* TITLES */
 h2 {
   text-align: center;
   margin-bottom: 40px;
-}
-
-/* CTA FINAL */
-.cta {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #1a1a2e, #000);
 }
 </style>
 </head>
@@ -126,56 +82,61 @@ h2 {
 <body>
 
 <div class="nav">
-  <div>Diego</div>
-  <div>
-    <a href="#problema">Problema</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-  </div>
+  <div>Diego | Software deportivo</div>
 </div>
 
 <section class="hero">
-  <h1>Automatizo el trabajo de entrenadores para que escalen sin caos</h1>
-  <p>Sistemas, IA y software diseñados para el mundo del entrenamiento</p>
-  <button class="btn">Trabajar conmigo</button>
+  <h1>Automatizo tu sistema de entrenamiento para que ganes tiempo y escales sin caos</h1>
+  <p>Deja de perder horas en Excel y procesos manuales</p>
+  <button class="btn">Quiero automatizar mi negocio</button>
 </section>
 
-<section id="problema" class="section">
+<section class="section">
   <h2>El problema</h2>
   <div class="grid">
-    <div class="card">Horas programando sesiones manualmente</div>
-    <div class="card">Dependencia de Excel</div>
-    <div class="card">Procesos caóticos</div>
+    <div class="card">Horas programando sesiones</div>
+    <div class="card">Seguimiento manual de clientes</div>
+    <div class="card">Procesos desorganizados</div>
   </div>
 </section>
 
-<section id="servicios" class="section">
-  <h2>Cómo te ayudo</h2>
+<section class="section">
+  <h2>La solución</h2>
   <div class="grid">
-    <div class="card">Automatización con n8n</div>
-    <div class="card">Sistemas de gestión</div>
-    <div class="card">Software a medida (SaaS)</div>
+    <div class="card">Sistema automatizado de programación</div>
+    <div class="card">Seguimiento automático de clientes</div>
+    <div class="card">Dashboard de control</div>
   </div>
 </section>
 
-<section class="cta" id="contacto">
+<section class="section">
+  <h2>Cómo funciona</h2>
+  <div class="grid">
+    <div class="card">1. Analizo tu sistema actual</div>
+    <div class="card">2. Diseño automatizaciones</div>
+    <div class="card">3. Implemento todo en 7 días</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Para quién es</h2>
+  <p style="text-align:center;">
+    Entrenadores y centros que quieren dejar de depender de Excel y escalar su negocio
+  </p>
+</section>
+
+<section class="section">
+  <h2>Sobre mí</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Soy entrenador y desarrollador. He visto durante años cómo los profesionales del entrenamiento pierden tiempo en tareas que deberían estar automatizadas. Ahora construyo sistemas para eliminar ese problema.
+  </p>
+</section>
+
+<section class="section" style="text-align:center;">
   <h2>¿Hablamos?</h2>
-  <p>Si quieres dejar de perder tiempo con procesos manuales, esto es para ti</p>
+  <p>Si quieres ahorrar tiempo y organizar tu negocio, esto es para ti</p>
   <button class="btn">Agendar llamada</button>
 </section>
-
-<script>
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
-      card.classList.add('visible');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
