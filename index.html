@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Diego Reina | Sistemas para entrenadores</title>
+<title>Diego | Sistemas para entrenadores</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -22,18 +22,6 @@ body {
   padding: 0 20px;
 }
 
-/* NAV */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 0;
-  font-size: 14px;
-}
-
-.logo {
-  font-weight: 600;
-}
-
 /* HERO */
 .hero {
   padding: 120px 0 80px;
@@ -42,13 +30,11 @@ body {
 .hero h1 {
   font-size: 2.6rem;
   max-width: 700px;
-  line-height: 1.2;
 }
 
 .hero p {
   color: #666;
   margin-top: 20px;
-  max-width: 500px;
 }
 
 .btn {
@@ -66,8 +52,7 @@ body {
   padding: 80px 0;
 }
 
-.section h2 {
-  font-size: 1.8rem;
+h2 {
   margin-bottom: 40px;
 }
 
@@ -84,65 +69,37 @@ body {
   border-radius: 10px;
 }
 
-.card h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* FEATURE */
-.feature {
+/* PHONE MOCKUPS */
+.phone-wrapper {
   display: flex;
-  gap: 60px;
-  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.feature-text {
-  max-width: 500px;
-}
-
-/* PHONE MOCKUP */
 .phone {
-  width: 260px;
-  height: 520px;
+  width: 250px;
   border-radius: 30px;
   background: #000;
   padding: 10px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.2);
 }
 
-.screen {
-  background: #fff;
-  height: 100%;
+.phone img {
+  width: 100%;
   border-radius: 20px;
-  padding: 20px;
 }
 
-.chat p {
-  background: #f1f1f1;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  font-size: 0.85rem;
-}
-
-/* CTA */
-.cta {
+/* FEATURE */
+.feature {
   text-align: center;
-  padding: 100px 0;
+  max-width: 700px;
+  margin: auto;
 }
 
-/* MOBILE */
 @media (max-width: 800px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-  .feature {
-    flex-direction: column;
   }
 }
 </style>
@@ -151,11 +108,6 @@ body {
 <body>
 
 <div class="container">
-
-<!-- NAV -->
-<div class="nav">
-  <div class="logo">Diego</div>
-</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -176,75 +128,53 @@ body {
 
 </section>
 
-<!-- RESULTADOS -->
-<section class="section">
-  <h2>Lo que cambia</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Menos tiempo operativo</h3>
-      <p>Reduce horas dedicadas a tareas manuales cada semana</p>
-    </div>
-
-    <div class="card">
-      <h3>Sistema organizado</h3>
-      <p>Todo centralizado sin depender de Excel</p>
-    </div>
-
-    <div class="card">
-      <h3>Escalabilidad</h3>
-      <p>Más clientes sin aumentar carga de trabajo</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTO SAAS -->
+<!-- PRODUCTO -->
 <section class="section">
 
   <div class="feature">
+    <h2>Físicas Policía Local</h2>
 
-    <div class="feature-text">
+    <p>
+    Sistema automatizado de entrenamiento para opositores que organiza, ejecuta y optimiza su preparación física.
+    </p>
 
-      <h2>Físicas Policía Local</h2>
+    <button class="btn" onclick="window.location.href='https://t.me/FisicasPoliciaLocal_bot'">
+      Ver demo en Telegram
+    </button>
+  </div>
 
-      <p>
-      Sistema automatizado de entrenamiento para opositores que organiza, ejecuta y optimiza la preparación física sin intervención manual.
-      </p>
+  <!-- MOCKUPS REALES -->
+  <div class="phone-wrapper">
 
-      <ul style="color:#666; margin-top:20px;">
-        <li>Entrenamiento automatizado</li>
-        <li>Seguimiento en tiempo real</li>
-        <li>Progresión estructurada</li>
-      </ul>
-
-      <button class="btn" onclick="window.location.href='https://t.me/FisicasPoliciaLocal_bot'">
-        Ver demo
-      </button>
-
+    <div class="phone">
+      <img src="IMG1.png">
     </div>
 
     <div class="phone">
-      <div class="screen">
-        <div class="chat">
-          <p><strong>Semana 5 de 8</strong></p>
-          <p>🏃 Carrera progresiva 10 min</p>
-          <p>⚡ Sprints x10</p>
-          <p>📊 Introduce tus marcas</p>
-        </div>
-      </div>
+      <img src="IMG2.png">
+    </div>
+
+    <div class="phone">
+      <img src="IMG3.png">
     </div>
 
   </div>
 
-  <div class="grid" style="margin-top:40px;">
+</section>
+
+<!-- BENEFICIOS -->
+<section class="section">
+  <h2>Lo que hace diferente al sistema</h2>
+
+  <div class="grid">
     <div class="card">
       <h3>Automatización completa</h3>
       <p>El usuario recibe el entrenamiento sin intervención manual</p>
     </div>
 
     <div class="card">
-      <h3>Seguimiento continuo</h3>
-      <p>Control del progreso sin hojas de cálculo</p>
+      <h3>Seguimiento real</h3>
+      <p>Control del progreso directamente en el sistema</p>
     </div>
 
     <div class="card">
@@ -277,18 +207,8 @@ body {
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="section">
-  <h2>Sobre mí</h2>
-
-  <p>
-  Soy entrenador y desarrollador. He trabajado directamente con clientes y entiendo el día a día real del sector.
-  Diseño sistemas pensados para el entrenamiento, no software genérico.
-  </p>
-</section>
-
 <!-- CTA -->
-<section class="cta">
+<section class="section" style="text-align:center;">
   <h2>Si tu negocio depende de procesos manuales, no es escalable</h2>
 
   <button class="btn" onclick="window.location.href='https://wa.me/346XXXXXXXX'">
