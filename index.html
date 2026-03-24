@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diego | Sistemas premium para entrenadores</title>
+  <title>Diego Reina | Software premium para entrenadores</title>
   <meta
     name="description"
-    content="Automatización, software e IA para entrenadores personales, preparadores físicos y centros de entrenamiento."
+    content="Automatización, software e IA para entrenadores, preparadores físicos y centros de entrenamiento."
   />
   <style>
     :root{
-      --bg:#07111f;
-      --bg2:#0b1730;
-      --card:#0f1b33;
+      --bg:#050816;
+      --bg-2:#0a1024;
+      --card:rgba(255,255,255,.05);
       --line:rgba(255,255,255,.08);
-      --text:#eef4ff;
-      --muted:#aab7d4;
-      --primary:#5eead4;
-      --primary2:#38bdf8;
+      --text:#f4f7ff;
+      --muted:#a8b3cc;
+      --primary:#67e8f9;
+      --primary-2:#22c55e;
       --accent:#8b5cf6;
-      --radius:22px;
-      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --danger:#fb7185;
+      --radius:24px;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
       --max:1120px;
     }
 
@@ -31,291 +32,295 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(56,189,248,.12), transparent 28%),
-        radial-gradient(circle at top right, rgba(139,92,246,.10), transparent 22%),
-        linear-gradient(180deg,#07111f 0%, #081425 100%);
-      line-height:1.55;
+        radial-gradient(circle at top left, rgba(103,232,249,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(139,92,246,.10), transparent 24%),
+        linear-gradient(180deg, #050816 0%, #070d1c 100%);
+      line-height:1.45;
     }
 
     a{text-decoration:none;color:inherit}
-    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
-    .section{padding:84px 0}
-    .section-sm{padding:64px 0}
+    .container{width:min(var(--max), calc(100% - 24px)); margin:0 auto}
+    .section{padding:72px 0}
+    .section-sm{padding:56px 0}
 
     .nav{
       position:sticky;
       top:0;
-      z-index:50;
-      backdrop-filter:blur(16px);
-      background:rgba(7,17,31,.72);
+      z-index:40;
+      backdrop-filter:blur(14px);
+      background:rgba(5,8,22,.72);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .nav-inner{
-      min-height:76px;
+      min-height:68px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:16px;
     }
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:10px;
       font-weight:800;
-      letter-spacing:-.02em;
+      letter-spacing:-.03em;
     }
     .brand-mark{
-      width:38px;height:38px;border-radius:12px;
-      background:linear-gradient(135deg,var(--primary),var(--primary2));
-      box-shadow:0 12px 25px rgba(56,189,248,.25);
+      width:34px;height:34px;border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow:0 10px 25px rgba(103,232,249,.22);
     }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:22px;
-      color:var(--muted);
-      font-size:.95rem;
-    }
-    .nav-links a:hover{color:var(--text)}
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       min-height:50px;
-      padding:0 20px;
+      padding:0 18px;
       border-radius:14px;
-      font-weight:700;
-      transition:.25s ease;
-    }
-    .btn-primary{
-      color:#07111f;
-      background:linear-gradient(135deg,var(--primary),var(--primary2));
-      box-shadow:0 12px 28px rgba(56,189,248,.22);
-    }
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
+      font-weight:800;
+      transition:.2s ease;
+      border:1px solid transparent;
     }
     .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      color:#051019;
+      background:linear-gradient(135deg,var(--primary),#7dd3fc);
+      box-shadow:0 12px 28px rgba(103,232,249,.18);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      border-color:rgba(255,255,255,.10);
+      color:var(--text);
+    }
+    .btn.full{width:100%}
 
     .eyebrow{
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      padding:8px 14px;
+      gap:8px;
+      padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(94,234,212,.18);
-      background:rgba(94,234,212,.07);
-      color:#c7fff7;
-      font-size:.86rem;
-      font-weight:700;
+      background:rgba(103,232,249,.07);
+      border:1px solid rgba(103,232,249,.14);
+      color:#c9fbff;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.02em;
     }
     .eyebrow::before{
       content:"";
       width:8px;height:8px;border-radius:50%;
-      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      background:linear-gradient(135deg,var(--primary),var(--accent));
     }
 
-    h1,h2,h3{margin:0 0 14px; letter-spacing:-.03em}
+    h1,h2,h3{
+      margin:0 0 12px;
+      letter-spacing:-.04em;
+    }
     h1{
-      font-size:clamp(2.6rem, 6vw, 5.2rem);
-      line-height:1.02;
-      max-width:10ch;
+      font-size:clamp(2.7rem, 9vw, 5.4rem);
+      line-height:.98;
     }
     h2{
-      font-size:clamp(2rem, 4vw, 3rem);
-      line-height:1.08;
+      font-size:clamp(2rem, 7vw, 3.2rem);
+      line-height:1.02;
     }
     h3{
-      font-size:1.15rem;
-      line-height:1.2;
-    }
-    p{margin:0;color:var(--muted)}
-    .lead{
       font-size:1.1rem;
-      color:#dce7ff;
-      max-width:60ch;
+      line-height:1.15;
+    }
+    p{
+      margin:0;
+      color:var(--muted);
+      font-size:1rem;
+    }
+    .lead{
+      font-size:1.06rem;
+      color:#dbe6ff;
     }
 
     .hero{
-      padding:72px 0 52px;
+      padding:34px 0 28px;
     }
-    .hero-grid{
+    .hero-wrap{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:34px;
-      align-items:center;
+      gap:20px;
     }
-    .btn-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:26px;
+    .hero-copy{
+      display:grid;
+      gap:16px;
+    }
+    .hero-copy h1{
+      max-width:8ch;
+    }
+    .hero-copy .lead{
+      max-width:28ch;
+    }
+
+    .stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:18px;
+      box-shadow:var(--shadow);
     }
 
     .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
+      position:relative;
+      overflow:hidden;
+      padding:18px;
       border-radius:28px;
-      padding:22px;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(103,232,249,.14), transparent 20%),
+        radial-gradient(circle at 15% 90%, rgba(139,92,246,.14), transparent 28%),
+        linear-gradient(180deg, rgba(18,28,54,.98), rgba(8,13,28,.98));
+      border:1px solid rgba(255,255,255,.09);
       box-shadow:var(--shadow);
     }
+
     .window-top{
       display:flex;
-      gap:8px;
-      margin-bottom:18px;
+      gap:7px;
+      margin-bottom:16px;
     }
-    .dot{
-      width:10px;height:10px;border-radius:50%;
-    }
+    .dot{width:9px;height:9px;border-radius:50%}
     .dot.red{background:#fb7185}
     .dot.yellow{background:#fbbf24}
     .dot.green{background:#34d399}
 
-    .panel{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;
-      padding:18px;
-    }
-    .panel + .panel{margin-top:14px}
-
-    .mini-grid{
+    .metric{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:12px;
+      gap:10px;
       margin-top:14px;
     }
     .mini{
+      border-radius:18px;
       padding:14px;
-      border-radius:16px;
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.06);
     }
     .mini strong{
       display:block;
-      margin-bottom:4px;
-      font-size:1rem;
+      margin-bottom:3px;
+      font-size:1.08rem;
+      color:var(--text);
+    }
+    .mini p{
+      font-size:.9rem;
     }
 
-    .section-head{
-      margin-bottom:26px;
-    }
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-    }
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:24px;
+    .headline-card{
+      padding:24px 20px;
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(103,232,249,.10), transparent 30%),
+        linear-gradient(180deg, rgba(13,20,40,.96), rgba(9,14,30,.96));
+      border:1px solid rgba(255,255,255,.07);
       box-shadow:var(--shadow);
     }
 
+    .value-grid{
+      display:grid;
+      gap:12px;
+    }
+    .value{
+      display:grid;
+      grid-template-columns:44px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:16px;
+      border-radius:22px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+    }
     .icon{
-      width:46px;height:46px;
+      width:44px;height:44px;
       display:grid;place-items:center;
       border-radius:14px;
-      margin-bottom:16px;
-      background:linear-gradient(135deg, rgba(94,234,212,.18), rgba(56,189,248,.18));
-      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(135deg, rgba(103,232,249,.18), rgba(139,92,246,.18));
+      border:1px solid rgba(255,255,255,.07);
       font-size:1.1rem;
     }
 
-    .list{
+    .proof{
       display:grid;
-      gap:10px;
-      margin-top:16px;
+      gap:12px;
     }
-    .list div{
-      display:flex;
-      gap:10px;
-      color:var(--muted);
-    }
-    .list span{
-      color:var(--primary);
-      font-weight:800;
-    }
-
-    .steps{
-      display:grid;
-      gap:16px;
-    }
-    .step{
-      display:grid;
-      grid-template-columns:44px 1fr;
-      gap:16px;
+    .proof-box{
       padding:18px;
-      border-radius:18px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.07);
-    }
-    .step-num{
-      width:44px;height:44px;
-      display:grid;place-items:center;
-      border-radius:12px;
-      font-weight:800;
-      color:#07111f;
-      background:linear-gradient(135deg,var(--primary),var(--primary2));
-    }
-
-    .founder{
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:24px;
-      align-items:center;
-    }
-    .founder-card{
-      aspect-ratio:1/1;
-      border-radius:24px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(56,189,248,.22), transparent 30%),
-        linear-gradient(135deg, #0e1c37, #091425);
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
+    }
+    .proof-kicker{
+      display:inline-block;
+      margin-bottom:10px;
+      color:#bffcf2;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
     }
 
     .cta-box{
-      padding:32px;
+      padding:22px 18px;
       border-radius:28px;
       background:
-        radial-gradient(circle at 10% 20%, rgba(94,234,212,.10), transparent 30%),
-        radial-gradient(circle at 90% 20%, rgba(139,92,246,.12), transparent 28%),
-        linear-gradient(180deg, rgba(14,28,55,.95), rgba(9,20,37,.95));
+        radial-gradient(circle at 10% 20%, rgba(103,232,249,.10), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(139,92,246,.12), transparent 30%),
+        linear-gradient(180deg, rgba(14,24,47,.98), rgba(8,13,28,.98));
       border:1px solid rgba(255,255,255,.08);
       box-shadow:var(--shadow);
     }
 
+    .split-cta{
+      display:grid;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .micro{
+      font-size:.85rem;
+      color:#91a0bf;
+    }
+
     footer{
-      padding:30px 0 50px;
-      border-top:1px solid rgba(255,255,255,.06);
-      color:var(--muted);
+      padding:26px 0 42px;
+      color:#8e9bb8;
+      font-size:.9rem;
+      text-align:center;
     }
 
-    @media (max-width: 980px){
-      .hero-grid,.grid-3,.grid-2,.founder{
-        grid-template-columns:1fr;
+    @media (min-width: 900px){
+      .container{width:min(var(--max), calc(100% - 48px))}
+      .hero{
+        padding:68px 0 42px;
       }
-      .founder-card{max-width:320px}
-    }
-
-    @media (max-width: 760px){
-      .nav-links{display:none}
-      .hero{padding:48px 0 28px}
-      .section{padding:70px 0}
-      .section-sm{padding:52px 0}
-      .container{width:min(var(--max), calc(100% - 20px))}
-      .mini-grid{grid-template-columns:1fr}
+      .hero-wrap{
+        grid-template-columns:1fr 1fr;
+        align-items:center;
+        gap:32px;
+      }
+      .value-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+      .proof{
+        grid-template-columns:1fr 1fr;
+      }
+      .split-cta{
+        grid-template-columns:auto auto;
+        justify-content:start;
+      }
+      .btn.full{
+        width:auto;
+      }
     }
   </style>
 </head>
@@ -327,31 +332,21 @@
         <span class="brand-mark"></span>
         <span>Diego</span>
       </a>
-
-      <nav class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#sobre-mi">Perfil</a>
-        <a href="#contacto" class="btn btn-secondary" style="min-height:42px;padding:0 16px;">Agendar llamada</a>
-      </nav>
+      <a href="#contacto" class="btn btn-secondary">Agendar</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Software deportivo · Automatización · IA</span>
-          <h1>Construyo sistemas premium para negocios fitness.</h1>
+      <div class="container hero-wrap">
+        <div class="hero-copy">
+          <span class="eyebrow">Fitness + software + automatización</span>
+          <h1>Tu negocio no necesita más esfuerzo. Necesita sistema.</h1>
           <p class="lead">
-            Ayudo a entrenadores personales, preparadores físicos y centros de entrenamiento a eliminar tareas manuales,
-            ordenar su operativa y escalar con software y automatización hechos para su sector.
+            Construyo software y automatizaciones para entrenadores, preparadores físicos y centros que quieren dejar atrás el Excel, el caos y el trabajo manual.
           </p>
-
-          <div class="btn-row">
-            <a href="#contacto" class="btn btn-primary">Agendar llamada</a>
-            <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
-          </div>
+          <a href="#contacto" class="btn btn-primary full">Quiero escalar mi operativa</a>
+          <p class="micro">Menos gestión. Más control. Más capacidad para crecer.</p>
         </div>
 
         <div class="hero-card">
@@ -361,140 +356,88 @@
             <span class="dot green"></span>
           </div>
 
-          <div class="panel">
-            <h3>Sistema operativo para entrenadores</h3>
-            <p>
-              Menos Excel, menos tareas repetitivas y más estructura para programar, seguir y escalar.
-            </p>
+          <h3>Sistema premium para entrenadores</h3>
+          <p>
+            Automatizo programación, seguimiento y procesos internos para que puedas operar mejor y escalar sin más carga.
+          </p>
 
-            <div class="mini-grid">
-              <div class="mini">
-                <strong>Automatización</strong>
-                <p>Flujos que eliminan trabajo manual.</p>
-              </div>
-              <div class="mini">
-                <strong>Seguimiento</strong>
-                <p>Procesos más claros y medibles.</p>
-              </div>
-              <div class="mini">
-                <strong>Software</strong>
-                <p>Herramientas específicas para fitness.</p>
-              </div>
-              <div class="mini">
-                <strong>Escala</strong>
-                <p>Más capacidad sin más carga operativa.</p>
-              </div>
+          <div class="metric">
+            <div class="mini">
+              <strong>Menos manual</strong>
+              <p>Eliminas tareas repetitivas.</p>
+            </div>
+            <div class="mini">
+              <strong>Más orden</strong>
+              <p>Tu operativa deja de depender del caos.</p>
+            </div>
+            <div class="mini">
+              <strong>Más margen</strong>
+              <p>Recuperas tiempo útil.</p>
+            </div>
+            <div class="mini">
+              <strong>Más escala</strong>
+              <p>Crecimiento con estructura.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="panel">
-            <h3>Producto SaaS real</h3>
-            <p>
-              “Físicas Policía Local”, un bot de Telegram que automatiza programación y seguimiento para opositores.
-            </p>
-          </div>
+    <section class="section-sm">
+      <div class="container">
+        <div class="headline-card">
+          <span class="eyebrow">Lo que hago</span>
+          <h2>Convierto operativas manuales en sistemas que venden mejor y funcionan solos.</h2>
         </div>
       </div>
     </section>
 
     <section class="section-sm" id="servicios">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Servicios</span>
-          <h2>Soluciones específicas para el sector del entrenamiento.</h2>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
+        <div class="value-grid">
+          <article class="value">
             <div class="icon">⚙️</div>
-            <h3>Automatización de procesos</h3>
-            <p>Diseño flujos y sistemas para reducir tareas manuales y ahorrar tiempo operativo.</p>
-            <div class="list">
-              <div><span>—</span> Programación</div>
-              <div><span>—</span> Seguimiento</div>
-              <div><span>—</span> Operativa interna</div>
+            <div>
+              <h3>Automatización real</h3>
+              <p>Programación, seguimiento y flujos internos sin trabajo repetitivo.</p>
             </div>
           </article>
 
-          <article class="card">
+          <article class="value">
             <div class="icon">🧠</div>
-            <h3>Sistemas de trabajo</h3>
-            <p>Estructuro procesos para que tu negocio funcione con más claridad, orden y consistencia.</p>
-            <div class="list">
-              <div><span>—</span> Menos caos</div>
-              <div><span>—</span> Más control</div>
-              <div><span>—</span> Mejor escalabilidad</div>
+            <div>
+              <h3>Sistema de negocio</h3>
+              <p>No vendo tareas sueltas. Diseño estructura para escalar.</p>
             </div>
           </article>
 
-          <article class="card">
+          <article class="value">
             <div class="icon">🚀</div>
-            <h3>Producto y SaaS fitness</h3>
-            <p>Transformo necesidades del sector en software real y escalable.</p>
-            <div class="list">
-              <div><span>—</span> Bots</div>
-              <div><span>—</span> Herramientas internas</div>
-              <div><span>—</span> Soluciones nicho</div>
+            <div>
+              <h3>Producto SaaS</h3>
+              <p>Construyo software específico para fitness, no soluciones genéricas.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-sm" id="proceso">
+    <section class="section-sm">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Proceso</span>
-          <h2>Cómo lo hacemos</h2>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div>
-              <h3>Llamada inicial</h3>
-              <p>Analizamos tu operativa actual, detectamos bloqueos y vemos dónde tiene sentido automatizar.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">2</div>
-            <div>
-              <h3>Estrategia</h3>
-              <p>Defino una propuesta clara con sistema, implementación y enfoque según tu tipo de negocio.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">3</div>
-            <div>
-              <h3>Implementación</h3>
-              <p>Construyo la solución para que tu negocio gane tiempo, orden y capacidad de crecer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-sm" id="sobre-mi">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Perfil</span>
-          <h2>Un perfil híbrido entre entrenador y desarrollador.</h2>
-        </div>
-
-        <div class="founder">
-          <div class="founder-card"></div>
-          <div class="card">
-            <h3>Hola, soy Diego.</h3>
+        <div class="proof">
+          <div class="proof-box">
+            <span class="proof-kicker">Prueba de ejecución</span>
+            <h3>Ya he convertido este enfoque en producto real.</h3>
             <p>
-              Soy desarrollador de software deportivo especializado en automatización, IA y sistemas para entrenadores personales,
-              preparadores físicos y centros de entrenamiento.
+              “Físicas Policía Local” es un bot de Telegram que automatiza la programación y el seguimiento de opositores.
             </p>
-            <br />
+          </div>
+
+          <div class="proof-box">
+            <span class="proof-kicker">Posicionamiento</span>
+            <h3>No soy un freelance más.</h3>
             <p>
-              Mi objetivo es construir soluciones tecnológicas específicas para el fitness: sistemas que automaticen trabajo,
-              ahorren tiempo y conviertan servicios manuales en operativas más escalables.
+              Soy un perfil híbrido entre entrenador y desarrollador. Entiendo el sector y construyo sistemas pensados para ese contexto.
             </p>
           </div>
         </div>
@@ -505,14 +448,14 @@
       <div class="container">
         <div class="cta-box">
           <span class="eyebrow">CTA</span>
-          <h2>Si tu negocio fitness todavía depende de procesos manuales, es momento de cambiar el sistema.</h2>
+          <h2>Si sigues operando a mano, sigues perdiendo dinero.</h2>
           <p class="lead">
-            Agenda una llamada y vemos cómo automatizar tu operativa, estructurar mejor tu servicio y preparar tu negocio para escalar.
+            Agenda una llamada y vemos cómo convertir tu negocio fitness en una operativa más limpia, más premium y más escalable.
           </p>
 
-          <div class="btn-row">
-            <a href="mailto:tuemail@dominio.com" class="btn btn-primary">Agendar llamada</a>
-            <a href="https://t.me/tuusuario" class="btn btn-secondary">Hablar por Telegram</a>
+          <div class="split-cta">
+            <a href="mailto:tuemail@dominio.com" class="btn btn-primary full">Agendar llamada</a>
+            <a href="https://t.me/tuusuario" class="btn btn-secondary full">Telegram</a>
           </div>
         </div>
       </div>
@@ -520,10 +463,7 @@
   </main>
 
   <footer>
-    <div class="container">
-      <p>Diego · Software deportivo, automatización e IA para el sector fitness.</p>
-    </div>
+    Diego Reina · Software deportivo, automatización e IA para el sector fitness
   </footer>
-
 </body>
 </html>
