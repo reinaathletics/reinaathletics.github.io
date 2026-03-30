@@ -3,56 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diego Reina | Software premium para entrenadores</title>
+  <title>Diego | Sistemas premium para negocios fitness</title>
   <meta
     name="description"
-    content="Automatización, software e IA para entrenadores, preparadores físicos y centros de entrenamiento."
+    content="Software, automatización e IA para entrenadores, preparadores físicos y centros que quieren escalar sin caos ni trabajo manual."
   />
   <style>
     :root{
       --bg:#050816;
-      --bg-2:#0a1024;
+      --bg-2:#0b1022;
       --card:rgba(255,255,255,.05);
+      --card-2:rgba(255,255,255,.035);
       --line:rgba(255,255,255,.08);
-      --text:#f4f7ff;
-      --muted:#a8b3cc;
-      --primary:#67e8f9;
-      --primary-2:#22c55e;
+      --text:#f5f7ff;
+      --muted:#a6b0c9;
+      --primary:#7dd3fc;
+      --primary-2:#67e8f9;
       --accent:#8b5cf6;
-      --danger:#fb7185;
+      --ok:#34d399;
+      --shadow:0 20px 60px rgba(0,0,0,.38);
       --radius:24px;
-      --shadow:0 20px 60px rgba(0,0,0,.35);
-      --max:1120px;
+      --max:1100px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(103,232,249,.10), transparent 30%),
-        radial-gradient(circle at top right, rgba(139,92,246,.10), transparent 24%),
-        linear-gradient(180deg, #050816 0%, #070d1c 100%);
-      line-height:1.45;
+        radial-gradient(circle at 0% 0%, rgba(125,211,252,.12), transparent 26%),
+        radial-gradient(circle at 100% 0%, rgba(139,92,246,.12), transparent 24%),
+        linear-gradient(180deg, #050816 0%, #070b19 100%);
+      line-height:1.42;
     }
 
     a{text-decoration:none;color:inherit}
     .container{width:min(var(--max), calc(100% - 24px)); margin:0 auto}
-    .section{padding:72px 0}
-    .section-sm{padding:56px 0}
+    .section{padding:44px 0}
+    .section-sm{padding:28px 0}
 
     .nav{
       position:sticky;
       top:0;
-      z-index:40;
-      backdrop-filter:blur(14px);
+      z-index:50;
+      backdrop-filter:blur(16px);
       background:rgba(5,8,22,.72);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .nav-inner{
-      min-height:68px;
+      min-height:64px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -67,26 +68,79 @@
     }
     .brand-mark{
       width:34px;height:34px;border-radius:12px;
+      background:
+        linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow:
+        0 12px 26px rgba(125,211,252,.18),
+        inset 0 1px 0 rgba(255,255,255,.2);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(125,211,252,.07);
+      border:1px solid rgba(125,211,252,.14);
+      color:#d4f5ff;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+    .eyebrow::before{
+      content:"";
+      width:8px;height:8px;border-radius:50%;
       background:linear-gradient(135deg,var(--primary),var(--accent));
-      box-shadow:0 10px 25px rgba(103,232,249,.22);
+      box-shadow:0 0 14px rgba(125,211,252,.55);
+    }
+
+    h1,h2,h3,p{margin:0}
+    h1,h2,h3{letter-spacing:-.04em}
+    h1{
+      font-size:clamp(2.4rem, 9vw, 5.6rem);
+      line-height:.95;
+      max-width:8ch;
+    }
+    h2{
+      font-size:clamp(1.8rem, 6vw, 3rem);
+      line-height:.98;
+    }
+    h3{
+      font-size:1rem;
+      line-height:1.08;
+    }
+    p{
+      color:var(--muted);
+      font-size:.98rem;
+    }
+    .lead{
+      color:#dbe5ff;
+      font-size:1.02rem;
+      max-width:28ch;
+    }
+    .micro{
+      font-size:.84rem;
+      color:#8e99b4;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:50px;
+      min-height:48px;
       padding:0 18px;
       border-radius:14px;
       font-weight:800;
       transition:.2s ease;
       border:1px solid transparent;
+      white-space:nowrap;
     }
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{
-      color:#051019;
-      background:linear-gradient(135deg,var(--primary),#7dd3fc);
-      box-shadow:0 12px 28px rgba(103,232,249,.18);
+      color:#04111a;
+      background:linear-gradient(135deg,var(--primary-2),var(--primary));
+      box-shadow:0 14px 30px rgba(125,211,252,.18);
     }
     .btn-secondary{
       background:rgba(255,255,255,.04);
@@ -95,237 +149,212 @@
     }
     .btn.full{width:100%}
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(103,232,249,.07);
-      border:1px solid rgba(103,232,249,.14);
-      color:#c9fbff;
-      font-size:.78rem;
-      font-weight:800;
-      letter-spacing:.02em;
-    }
-    .eyebrow::before{
-      content:"";
-      width:8px;height:8px;border-radius:50%;
-      background:linear-gradient(135deg,var(--primary),var(--accent));
-    }
-
-    h1,h2,h3{
-      margin:0 0 12px;
-      letter-spacing:-.04em;
-    }
-    h1{
-      font-size:clamp(2.7rem, 9vw, 5.4rem);
-      line-height:.98;
-    }
-    h2{
-      font-size:clamp(2rem, 7vw, 3.2rem);
-      line-height:1.02;
-    }
-    h3{
-      font-size:1.1rem;
-      line-height:1.15;
-    }
-    p{
-      margin:0;
-      color:var(--muted);
-      font-size:1rem;
-    }
-    .lead{
-      font-size:1.06rem;
-      color:#dbe6ff;
-    }
-
     .hero{
-      padding:34px 0 28px;
+      padding:24px 0 16px;
     }
-    .hero-wrap{
-      display:grid;
-      gap:20px;
-    }
-    .hero-copy{
+    .hero-grid{
       display:grid;
       gap:16px;
     }
-    .hero-copy h1{
-      max-width:8ch;
-    }
-    .hero-copy .lead{
-      max-width:28ch;
-    }
-
-    .stack{
+    .hero-copy{
       display:grid;
-      gap:12px;
+      gap:14px;
     }
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:18px;
-      box-shadow:var(--shadow);
+    .cta-row{
+      display:grid;
+      gap:10px;
     }
 
     .hero-card{
       position:relative;
       overflow:hidden;
-      padding:18px;
+      padding:16px;
       border-radius:28px;
       background:
-        radial-gradient(circle at 85% 15%, rgba(103,232,249,.14), transparent 20%),
-        radial-gradient(circle at 15% 90%, rgba(139,92,246,.14), transparent 28%),
-        linear-gradient(180deg, rgba(18,28,54,.98), rgba(8,13,28,.98));
+        radial-gradient(circle at 82% 16%, rgba(125,211,252,.14), transparent 22%),
+        radial-gradient(circle at 16% 100%, rgba(139,92,246,.16), transparent 32%),
+        linear-gradient(180deg, rgba(17,24,46,.96), rgba(8,13,28,.98));
       border:1px solid rgba(255,255,255,.09);
       box-shadow:var(--shadow);
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -70px auto;
+      width:180px;height:180px;border-radius:50%;
+      background:radial-gradient(circle, rgba(125,211,252,.16), transparent 64%);
+      filter:blur(8px);
+      pointer-events:none;
     }
 
     .window-top{
       display:flex;
       gap:7px;
-      margin-bottom:16px;
+      margin-bottom:14px;
     }
-    .dot{width:9px;height:9px;border-radius:50%}
-    .dot.red{background:#fb7185}
-    .dot.yellow{background:#fbbf24}
-    .dot.green{background:#34d399}
+    .dot{width:8px;height:8px;border-radius:50%}
+    .red{background:#fb7185}
+    .yellow{background:#fbbf24}
+    .green{background:#34d399}
 
-    .metric{
+    .mockup-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .pill{
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(52,211,153,.10);
+      border:1px solid rgba(52,211,153,.18);
+      color:#cbfff0;
+      font-size:.72rem;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .metric-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px;
-      margin-top:14px;
     }
-    .mini{
+    .metric{
+      padding:13px;
       border-radius:18px;
-      padding:14px;
-      background:rgba(255,255,255,.04);
+      background:var(--card-2);
       border:1px solid rgba(255,255,255,.06);
+      backdrop-filter:blur(8px);
     }
-    .mini strong{
+    .metric strong{
       display:block;
-      margin-bottom:3px;
-      font-size:1.08rem;
+      font-size:1rem;
+      margin-bottom:2px;
       color:var(--text);
+      letter-spacing:-.03em;
     }
-    .mini p{
-      font-size:.9rem;
+    .metric p{
+      font-size:.84rem;
     }
 
-    .headline-card{
-      padding:24px 20px;
-      border-radius:28px;
+    .strip{
+      padding:16px;
+      border-radius:24px;
       background:
-        radial-gradient(circle at 0% 0%, rgba(103,232,249,.10), transparent 30%),
-        linear-gradient(180deg, rgba(13,20,40,.96), rgba(9,14,30,.96));
-      border:1px solid rgba(255,255,255,.07);
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
       box-shadow:var(--shadow);
     }
 
     .value-grid{
       display:grid;
-      gap:12px;
+      gap:10px;
     }
     .value{
       display:grid;
-      grid-template-columns:44px 1fr;
-      gap:14px;
+      grid-template-columns:40px 1fr;
+      gap:12px;
       align-items:start;
-      padding:16px;
-      border-radius:22px;
+      padding:14px;
+      border-radius:20px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.07);
     }
     .icon{
-      width:44px;height:44px;
+      width:40px;height:40px;
       display:grid;place-items:center;
       border-radius:14px;
-      background:linear-gradient(135deg, rgba(103,232,249,.18), rgba(139,92,246,.18));
-      border:1px solid rgba(255,255,255,.07);
-      font-size:1.1rem;
+      background:linear-gradient(135deg, rgba(125,211,252,.18), rgba(139,92,246,.18));
+      border:1px solid rgba(255,255,255,.06);
+      font-size:1rem;
     }
 
     .proof{
       display:grid;
-      gap:12px;
+      gap:10px;
     }
-    .proof-box{
-      padding:18px;
+    .proof-card{
+      padding:16px;
       border-radius:22px;
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
     }
-    .proof-kicker{
+    .kicker{
       display:inline-block;
-      margin-bottom:10px;
-      color:#bffcf2;
-      font-size:.78rem;
+      margin-bottom:8px;
+      color:#c7fff3;
+      font-size:.72rem;
       font-weight:800;
-      letter-spacing:.04em;
+      letter-spacing:.05em;
       text-transform:uppercase;
     }
 
     .cta-box{
-      padding:22px 18px;
+      position:relative;
+      overflow:hidden;
+      padding:20px 16px;
       border-radius:28px;
       background:
-        radial-gradient(circle at 10% 20%, rgba(103,232,249,.10), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(139,92,246,.12), transparent 30%),
-        linear-gradient(180deg, rgba(14,24,47,.98), rgba(8,13,28,.98));
+        radial-gradient(circle at 10% 20%, rgba(125,211,252,.12), transparent 24%),
+        radial-gradient(circle at 90% 10%, rgba(139,92,246,.14), transparent 28%),
+        linear-gradient(180deg, rgba(14,22,42,.98), rgba(8,12,24,.98));
       border:1px solid rgba(255,255,255,.08);
       box-shadow:var(--shadow);
     }
-
-    .split-cta{
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      inset:auto auto -70px -40px;
+      width:150px;height:150px;border-radius:50%;
+      background:radial-gradient(circle, rgba(139,92,246,.18), transparent 62%);
+      filter:blur(10px);
+    }
+    .cta-box > *{position:relative; z-index:1}
+    .cta-actions{
       display:grid;
       gap:10px;
-      margin-top:18px;
-    }
-
-    .micro{
-      font-size:.85rem;
-      color:#91a0bf;
+      margin-top:16px;
     }
 
     footer{
-      padding:26px 0 42px;
-      color:#8e9bb8;
-      font-size:.9rem;
+      padding:16px 0 28px;
       text-align:center;
+      color:#8c97b1;
+      font-size:.84rem;
     }
 
-    @media (min-width: 900px){
-      .container{width:min(var(--max), calc(100% - 48px))}
+    @media (min-width: 860px){
+      .container{width:min(var(--max), calc(100% - 40px))}
       .hero{
-        padding:68px 0 42px;
+        padding:44px 0 24px;
       }
-      .hero-wrap{
-        grid-template-columns:1fr 1fr;
+      .hero-grid{
+        grid-template-columns:1.02fr .98fr;
         align-items:center;
-        gap:32px;
+        gap:22px;
       }
+      .cta-row{
+        display:flex;
+        gap:10px;
+        align-items:center;
+      }
+      .btn.full{width:auto}
       .value-grid{
         grid-template-columns:repeat(3,1fr);
       }
       .proof{
         grid-template-columns:1fr 1fr;
       }
-      .split-cta{
+      .cta-actions{
         grid-template-columns:auto auto;
         justify-content:start;
-      }
-      .btn.full{
-        width:auto;
       }
     }
   </style>
 </head>
 <body>
-
   <header class="nav">
     <div class="container nav-inner">
       <a href="#" class="brand">
@@ -338,15 +367,18 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-wrap">
+      <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Fitness + software + automatización</span>
-          <h1>Tu negocio no necesita más esfuerzo. Necesita sistema.</h1>
+          <h1>Deja de gestionar. Empieza a escalar.</h1>
           <p class="lead">
-            Construyo software y automatizaciones para entrenadores, preparadores físicos y centros que quieren dejar atrás el Excel, el caos y el trabajo manual.
+            Construyo sistemas premium para entrenadores y centros que quieren eliminar trabajo manual, ganar control y crecer con estructura.
           </p>
-          <a href="#contacto" class="btn btn-primary full">Quiero escalar mi operativa</a>
-          <p class="micro">Menos gestión. Más control. Más capacidad para crecer.</p>
+          <div class="cta-row">
+            <a href="#contacto" class="btn btn-primary full">Quiero automatizar mi negocio</a>
+            <a href="#valor" class="btn btn-secondary full">Ver más</a>
+          </div>
+          <p class="micro">Menos Excel. Menos caos. Más margen.</p>
         </div>
 
         <div class="hero-card">
@@ -356,91 +388,86 @@
             <span class="dot green"></span>
           </div>
 
-          <h3>Sistema premium para entrenadores</h3>
-          <p>
-            Automatizo programación, seguimiento y procesos internos para que puedas operar mejor y escalar sin más carga.
-          </p>
+          <div class="mockup-head">
+            <div>
+              <h3>Sistema operativo premium</h3>
+              <p>Software + automatización para que tu operativa no dependa de ti.</p>
+            </div>
+            <span class="pill">Escalable</span>
+          </div>
 
-          <div class="metric">
-            <div class="mini">
-              <strong>Menos manual</strong>
-              <p>Eliminas tareas repetitivas.</p>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>Automatiza</strong>
+              <p>Programación y seguimiento.</p>
             </div>
-            <div class="mini">
-              <strong>Más orden</strong>
-              <p>Tu operativa deja de depender del caos.</p>
+            <div class="metric">
+              <strong>Ordena</strong>
+              <p>Procesos y estructura interna.</p>
             </div>
-            <div class="mini">
-              <strong>Más margen</strong>
-              <p>Recuperas tiempo útil.</p>
+            <div class="metric">
+              <strong>Ahorra</strong>
+              <p>Horas de gestión repetitiva.</p>
             </div>
-            <div class="mini">
-              <strong>Más escala</strong>
-              <p>Crecimiento con estructura.</p>
+            <div class="metric">
+              <strong>Escala</strong>
+              <p>Sin más carga operativa.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm" id="valor">
+      <div class="container">
+        <div class="strip">
+          <span class="eyebrow">Oferta</span>
+          <h2>Convierto operativas manuales en sistemas que funcionan solos.</h2>
         </div>
       </div>
     </section>
 
     <section class="section-sm">
-      <div class="container">
-        <div class="headline-card">
-          <span class="eyebrow">Lo que hago</span>
-          <h2>Convierto operativas manuales en sistemas que venden mejor y funcionan solos.</h2>
-        </div>
-      </div>
-    </section>
+      <div class="container value-grid">
+        <article class="value">
+          <div class="icon">⚙️</div>
+          <div>
+            <h3>Automatización real</h3>
+            <p>Menos tareas repetitivas. Más tiempo útil.</p>
+          </div>
+        </article>
 
-    <section class="section-sm" id="servicios">
-      <div class="container">
-        <div class="value-grid">
-          <article class="value">
-            <div class="icon">⚙️</div>
-            <div>
-              <h3>Automatización real</h3>
-              <p>Programación, seguimiento y flujos internos sin trabajo repetitivo.</p>
-            </div>
-          </article>
+        <article class="value">
+          <div class="icon">🧠</div>
+          <div>
+            <h3>Sistema de negocio</h3>
+            <p>No hago parches. Diseño estructura para crecer.</p>
+          </div>
+        </article>
 
-          <article class="value">
-            <div class="icon">🧠</div>
-            <div>
-              <h3>Sistema de negocio</h3>
-              <p>No vendo tareas sueltas. Diseño estructura para escalar.</p>
-            </div>
-          </article>
-
-          <article class="value">
-            <div class="icon">🚀</div>
-            <div>
-              <h3>Producto SaaS</h3>
-              <p>Construyo software específico para fitness, no soluciones genéricas.</p>
-            </div>
-          </article>
-        </div>
+        <article class="value">
+          <div class="icon">🚀</div>
+          <div>
+            <h3>Producto SaaS</h3>
+            <p>Soluciones fitness hechas para tu sector.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="section-sm">
-      <div class="container">
-        <div class="proof">
-          <div class="proof-box">
-            <span class="proof-kicker">Prueba de ejecución</span>
-            <h3>Ya he convertido este enfoque en producto real.</h3>
-            <p>
-              “Físicas Policía Local” es un bot de Telegram que automatiza la programación y el seguimiento de opositores.
-            </p>
-          </div>
+      <div class="container proof">
+        <article class="proof-card">
+          <span class="kicker">Prueba</span>
+          <h3>Ya lo he convertido en producto real.</h3>
+          <p>“Físicas Policía Local” automatiza programación y seguimiento dentro de Telegram.</p>
+        </article>
 
-          <div class="proof-box">
-            <span class="proof-kicker">Posicionamiento</span>
-            <h3>No soy un freelance más.</h3>
-            <p>
-              Soy un perfil híbrido entre entrenador y desarrollador. Entiendo el sector y construyo sistemas pensados para ese contexto.
-            </p>
-          </div>
-        </div>
+        <article class="proof-card">
+          <span class="kicker">Perfil</span>
+          <h3>No soy un freelance más.</h3>
+          <p>Soy un perfil híbrido entre entrenador y desarrollador. Entiendo el problema y construyo la solución.</p>
+        </article>
       </div>
     </section>
 
@@ -448,12 +475,11 @@
       <div class="container">
         <div class="cta-box">
           <span class="eyebrow">CTA</span>
-          <h2>Si sigues operando a mano, sigues perdiendo dinero.</h2>
+          <h2>Si sigues operando a mano, sigues frenando tu negocio.</h2>
           <p class="lead">
-            Agenda una llamada y vemos cómo convertir tu negocio fitness en una operativa más limpia, más premium y más escalable.
+            Agenda una llamada y vemos cómo convertir tu operativa en un sistema más limpio, más premium y más escalable.
           </p>
-
-          <div class="split-cta">
+          <div class="cta-actions">
             <a href="mailto:tuemail@dominio.com" class="btn btn-primary full">Agendar llamada</a>
             <a href="https://t.me/tuusuario" class="btn btn-secondary full">Telegram</a>
           </div>
@@ -463,7 +489,7 @@
   </main>
 
   <footer>
-    Diego Reina · Software deportivo, automatización e IA para el sector fitness
+    Diego · Software deportivo, automatización e IA para el sector fitness
   </footer>
 </body>
 </html>
