@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diego | Sistemas premium para negocios fitness</title>
+
   <meta
     name="description"
     content="Software, automatización e IA para entrenadores, preparadores físicos y centros que quieren escalar sin caos ni trabajo manual."
   />
+
   <style>
     :root{
       --bg:#050816;
@@ -20,7 +22,6 @@
       --primary:#7dd3fc;
       --primary-2:#67e8f9;
       --accent:#8b5cf6;
-      --ok:#34d399;
       --shadow:0 20px 60px rgba(0,0,0,.38);
       --radius:24px;
       --max:1100px;
@@ -30,13 +31,12 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
         radial-gradient(circle at 0% 0%, rgba(125,211,252,.12), transparent 26%),
         radial-gradient(circle at 100% 0%, rgba(139,92,246,.12), transparent 24%),
         linear-gradient(180deg, #050816 0%, #070b19 100%);
-      line-height:1.42;
     }
 
     a{text-decoration:none;color:inherit}
@@ -47,7 +47,6 @@
     .nav{
       position:sticky;
       top:0;
-      z-index:50;
       backdrop-filter:blur(16px);
       background:rgba(5,8,22,.72);
       border-bottom:1px solid rgba(255,255,255,.06);
@@ -57,72 +56,24 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
     }
+
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
       font-weight:800;
-      letter-spacing:-.03em;
     }
     .brand-mark{
       width:34px;height:34px;border-radius:12px;
-      background:
-        linear-gradient(135deg,var(--primary),var(--accent));
-      box-shadow:
-        0 12px 26px rgba(125,211,252,.18),
-        inset 0 1px 0 rgba(255,255,255,.2);
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 12px;
-      border-radius:999px;
-      background:rgba(125,211,252,.07);
-      border:1px solid rgba(125,211,252,.14);
-      color:#d4f5ff;
-      font-size:.76rem;
-      font-weight:800;
-      letter-spacing:.02em;
-    }
-    .eyebrow::before{
-      content:"";
-      width:8px;height:8px;border-radius:50%;
       background:linear-gradient(135deg,var(--primary),var(--accent));
-      box-shadow:0 0 14px rgba(125,211,252,.55);
     }
 
-    h1,h2,h3,p{margin:0}
-    h1,h2,h3{letter-spacing:-.04em}
-    h1{
-      font-size:clamp(2.4rem, 9vw, 5.6rem);
-      line-height:.95;
-      max-width:8ch;
-    }
-    h2{
-      font-size:clamp(1.8rem, 6vw, 3rem);
-      line-height:.98;
-    }
-    h3{
-      font-size:1rem;
-      line-height:1.08;
-    }
-    p{
-      color:var(--muted);
-      font-size:.98rem;
-    }
-    .lead{
-      color:#dbe5ff;
-      font-size:1.02rem;
-      max-width:28ch;
-    }
-    .micro{
-      font-size:.84rem;
-      color:#8e99b4;
-    }
+    h1,h2,h3{margin:0 0 10px}
+    h1{font-size:clamp(2.4rem, 9vw, 5rem); line-height:.95;}
+    h2{font-size:clamp(1.8rem, 6vw, 2.8rem);}
+    h3{font-size:1rem;}
+    p{color:var(--muted); margin:0;}
 
     .btn{
       display:inline-flex;
@@ -132,87 +83,23 @@
       padding:0 18px;
       border-radius:14px;
       font-weight:800;
-      transition:.2s ease;
-      border:1px solid transparent;
-      white-space:nowrap;
     }
-    .btn:hover{transform:translateY(-2px)}
     .btn-primary{
-      color:#04111a;
       background:linear-gradient(135deg,var(--primary-2),var(--primary));
-      box-shadow:0 14px 30px rgba(125,211,252,.18);
+      color:#04111a;
     }
     .btn-secondary{
+      border:1px solid rgba(255,255,255,.1);
       background:rgba(255,255,255,.04);
-      border-color:rgba(255,255,255,.10);
-      color:var(--text);
-    }
-    .btn.full{width:100%}
-
-    .hero{
-      padding:24px 0 16px;
-    }
-    .hero-grid{
-      display:grid;
-      gap:16px;
-    }
-    .hero-copy{
-      display:grid;
-      gap:14px;
-    }
-    .cta-row{
-      display:grid;
-      gap:10px;
     }
 
+    .hero{padding:30px 0;}
+    .hero-grid{display:grid; gap:16px;}
     .hero-card{
-      position:relative;
-      overflow:hidden;
       padding:16px;
-      border-radius:28px;
-      background:
-        radial-gradient(circle at 82% 16%, rgba(125,211,252,.14), transparent 22%),
-        radial-gradient(circle at 16% 100%, rgba(139,92,246,.16), transparent 32%),
-        linear-gradient(180deg, rgba(17,24,46,.96), rgba(8,13,28,.98));
-      border:1px solid rgba(255,255,255,.09);
-      box-shadow:var(--shadow);
-    }
-    .hero-card::after{
-      content:"";
-      position:absolute;
-      inset:auto -60px -70px auto;
-      width:180px;height:180px;border-radius:50%;
-      background:radial-gradient(circle, rgba(125,211,252,.16), transparent 64%);
-      filter:blur(8px);
-      pointer-events:none;
-    }
-
-    .window-top{
-      display:flex;
-      gap:7px;
-      margin-bottom:14px;
-    }
-    .dot{width:8px;height:8px;border-radius:50%}
-    .red{background:#fb7185}
-    .yellow{background:#fbbf24}
-    .green{background:#34d399}
-
-    .mockup-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-    }
-    .pill{
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(52,211,153,.10);
-      border:1px solid rgba(52,211,153,.18);
-      color:#cbfff0;
-      font-size:.72rem;
-      font-weight:800;
-      white-space:nowrap;
+      border-radius:24px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
     }
 
     .metric-grid{
@@ -221,30 +108,16 @@
       gap:10px;
     }
     .metric{
-      padding:13px;
-      border-radius:18px;
-      background:var(--card-2);
-      border:1px solid rgba(255,255,255,.06);
-      backdrop-filter:blur(8px);
-    }
-    .metric strong{
-      display:block;
-      font-size:1rem;
-      margin-bottom:2px;
-      color:var(--text);
-      letter-spacing:-.03em;
-    }
-    .metric p{
-      font-size:.84rem;
+      padding:12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
     }
 
     .strip{
       padding:16px;
-      border-radius:24px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border-radius:20px;
+      background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
     }
 
     .value-grid{
@@ -252,22 +125,9 @@
       gap:10px;
     }
     .value{
-      display:grid;
-      grid-template-columns:40px 1fr;
-      gap:12px;
-      align-items:start;
       padding:14px;
-      border-radius:20px;
+      border-radius:16px;
       background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.07);
-    }
-    .icon{
-      width:40px;height:40px;
-      display:grid;place-items:center;
-      border-radius:14px;
-      background:linear-gradient(135deg, rgba(125,211,252,.18), rgba(139,92,246,.18));
-      border:1px solid rgba(255,255,255,.06);
-      font-size:1rem;
     }
 
     .proof{
@@ -276,220 +136,133 @@
     }
     .proof-card{
       padding:16px;
-      border-radius:22px;
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-    }
-    .kicker{
-      display:inline-block;
-      margin-bottom:8px;
-      color:#c7fff3;
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.05em;
-      text-transform:uppercase;
+      border-radius:20px;
+      background:rgba(255,255,255,.04);
     }
 
     .cta-box{
-      position:relative;
-      overflow:hidden;
-      padding:20px 16px;
-      border-radius:28px;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(125,211,252,.12), transparent 24%),
-        radial-gradient(circle at 90% 10%, rgba(139,92,246,.14), transparent 28%),
-        linear-gradient(180deg, rgba(14,22,42,.98), rgba(8,12,24,.98));
+      padding:20px;
+      border-radius:24px;
+      background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-    }
-    .cta-box::before{
-      content:"";
-      position:absolute;
-      inset:auto auto -70px -40px;
-      width:150px;height:150px;border-radius:50%;
-      background:radial-gradient(circle, rgba(139,92,246,.18), transparent 62%);
-      filter:blur(10px);
-    }
-    .cta-box > *{position:relative; z-index:1}
-    .cta-actions{
-      display:grid;
-      gap:10px;
-      margin-top:16px;
     }
 
     footer{
-      padding:16px 0 28px;
       text-align:center;
+      padding:20px;
+      font-size:.9rem;
       color:#8c97b1;
-      font-size:.84rem;
-    }
-
-    @media (min-width: 860px){
-      .container{width:min(var(--max), calc(100% - 40px))}
-      .hero{
-        padding:44px 0 24px;
-      }
-      .hero-grid{
-        grid-template-columns:1.02fr .98fr;
-        align-items:center;
-        gap:22px;
-      }
-      .cta-row{
-        display:flex;
-        gap:10px;
-        align-items:center;
-      }
-      .btn.full{width:auto}
-      .value-grid{
-        grid-template-columns:repeat(3,1fr);
-      }
-      .proof{
-        grid-template-columns:1fr 1fr;
-      }
-      .cta-actions{
-        grid-template-columns:auto auto;
-        justify-content:start;
-      }
     }
   </style>
 </head>
+
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#" class="brand">
-        <span class="brand-mark"></span>
-        <span>Diego</span>
-      </a>
-      <a href="#contacto" class="btn btn-secondary">Agendar</a>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      Diego
     </div>
-  </header>
+    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Fitness + software + automatización</span>
-          <h1>Deja de gestionar. Empieza a escalar.</h1>
-          <p class="lead">
-            Construyo sistemas premium para entrenadores y centros que quieren eliminar trabajo manual, ganar control y crecer con estructura.
-          </p>
-          <div class="cta-row">
-            <a href="#contacto" class="btn btn-primary full">Quiero automatizar mi negocio</a>
-            <a href="#valor" class="btn btn-secondary full">Ver más</a>
-          </div>
-          <p class="micro">Menos Excel. Menos caos. Más margen.</p>
-        </div>
+<main>
 
-        <div class="hero-card">
-          <div class="window-top">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Deja de gestionar. Empieza a escalar.</h1>
+      <p>
+        Construyo sistemas y software para entrenadores y centros que quieren eliminar trabajo manual y crecer con estructura.
+      </p>
 
-          <div class="mockup-head">
-            <div>
-              <h3>Sistema operativo premium</h3>
-              <p>Software + automatización para que tu operativa no dependa de ti.</p>
-            </div>
-            <span class="pill">Escalable</span>
-          </div>
+      <br>
 
-          <div class="metric-grid">
-            <div class="metric">
-              <strong>Automatiza</strong>
-              <p>Programación y seguimiento.</p>
-            </div>
-            <div class="metric">
-              <strong>Ordena</strong>
-              <p>Procesos y estructura interna.</p>
-            </div>
-            <div class="metric">
-              <strong>Ahorra</strong>
-              <p>Horas de gestión repetitiva.</p>
-            </div>
-            <div class="metric">
-              <strong>Escala</strong>
-              <p>Sin más carga operativa.</p>
-            </div>
-          </div>
-        </div>
+      <a href="#contacto" class="btn btn-primary">Quiero automatizar</a>
+      <a href="https://t.me/FisicasPoliciaLocal_bot" target="_blank" class="btn btn-secondary">Ver bot</a>
+    </div>
+
+    <div class="hero-card">
+      <h3>Sistema premium fitness</h3>
+      <p>Automatiza programación, seguimiento y operativa.</p>
+
+      <div class="metric-grid">
+        <div class="metric">Menos manual</div>
+        <div class="metric">Más orden</div>
+        <div class="metric">Más tiempo</div>
+        <div class="metric">Más escala</div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="section-sm" id="valor">
-      <div class="container">
-        <div class="strip">
-          <span class="eyebrow">Oferta</span>
-          <h2>Convierto operativas manuales en sistemas que funcionan solos.</h2>
-        </div>
-      </div>
-    </section>
+<section class="section-sm">
+  <div class="container">
+    <div class="strip">
+      <h2>Convierto operativas manuales en sistemas que funcionan solos.</h2>
+    </div>
+  </div>
+</section>
 
-    <section class="section-sm">
-      <div class="container value-grid">
-        <article class="value">
-          <div class="icon">⚙️</div>
-          <div>
-            <h3>Automatización real</h3>
-            <p>Menos tareas repetitivas. Más tiempo útil.</p>
-          </div>
-        </article>
+<section class="section-sm">
+  <div class="container value-grid">
+    <div class="value">
+      <h3>Automatización</h3>
+      <p>Eliminas tareas repetitivas</p>
+    </div>
+    <div class="value">
+      <h3>Sistema</h3>
+      <p>Estructura para escalar</p>
+    </div>
+    <div class="value">
+      <h3>SaaS</h3>
+      <p>Software real para fitness</p>
+    </div>
+  </div>
+</section>
 
-        <article class="value">
-          <div class="icon">🧠</div>
-          <div>
-            <h3>Sistema de negocio</h3>
-            <p>No hago parches. Diseño estructura para crecer.</p>
-          </div>
-        </article>
+<section class="section-sm">
+  <div class="container proof">
 
-        <article class="value">
-          <div class="icon">🚀</div>
-          <div>
-            <h3>Producto SaaS</h3>
-            <p>Soluciones fitness hechas para tu sector.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+    <div class="proof-card">
+      <h3>Producto real</h3>
+      <p>
+        <a href="https://t.me/FisicasPoliciaLocal_bot" target="_blank" style="color:#7dd3fc;">
+          Físicas Policía Local
+        </a>
+        automatiza entrenamiento y seguimiento.
+      </p>
+    </div>
 
-    <section class="section-sm">
-      <div class="container proof">
-        <article class="proof-card">
-          <span class="kicker">Prueba</span>
-          <h3>Ya lo he convertido en producto real.</h3>
-          <p>“Físicas Policía Local” automatiza programación y seguimiento dentro de Telegram.</p>
-        </article>
+    <div class="proof-card">
+      <h3>Perfil</h3>
+      <p>Entrenador + desarrollador. Entiendo el problema y construyo la solución.</p>
+    </div>
 
-        <article class="proof-card">
-          <span class="kicker">Perfil</span>
-          <h3>No soy un freelance más.</h3>
-          <p>Soy un perfil híbrido entre entrenador y desarrollador. Entiendo el problema y construyo la solución.</p>
-        </article>
-      </div>
-    </section>
+  </div>
+</section>
 
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="cta-box">
-          <span class="eyebrow">CTA</span>
-          <h2>Si sigues operando a mano, sigues frenando tu negocio.</h2>
-          <p class="lead">
-            Agenda una llamada y vemos cómo convertir tu operativa en un sistema más limpio, más premium y más escalable.
-          </p>
-          <div class="cta-actions">
-            <a href="mailto:tuemail@dominio.com" class="btn btn-primary full">Agendar llamada</a>
-            <a href="https://t.me/tuusuario" class="btn btn-secondary full">Telegram</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Si sigues operando a mano, sigues perdiendo tiempo.</h2>
+      <p>Escríbeme y vemos cómo automatizar tu negocio.</p>
 
-  <footer>
-    Diego · Software deportivo, automatización e IA para el sector fitness
-  </footer>
+      <br>
+
+      <a href="mailto:reina.athletics@gmail.com" class="btn btn-primary">Enviar email</a>
+      <a href="https://t.me/FisicasPoliciaLocal_bot" target="_blank" class="btn btn-secondary">Ver bot</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Diego · Software deportivo & automatización fitness
+</footer>
+
 </body>
 </html>
